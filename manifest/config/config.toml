@@ -1,17 +1,33 @@
-[database]
-    [[database.default]]
-        host         = "127.0.0.1"
-        port         = "3306"
-        user         = "root"
-        pass         = "password"
-        name         = "example_app"
-        type         = "mysql"
-        role         = "master"
-        debug        = "true"
-        dryrun       = 1
-        weight       = "100"
-        charset      = "utf8"
-        linkinfo     = ""
-        maxIdle      = "10"
-        maxOpen      = "100"
-        maxLifetime  = "30"
+[server]
+  address =    ":8000"
+  openapiPath ="/api.json"
+  swaggerPath ="/swagger"
+
+
+[logger]
+  level = "all"
+  stdout= true
+
+# [database]
+#     [[database.default]]
+#         host         = "127.0.0.1"
+#         port         = "3306"
+#         user         = "root"
+#         pass         = "password"
+#         name         = "dba"
+#         type         = "mysql"
+#         role         = "master"
+#         debug        = "true"
+#         dryrun       = 1
+#         weight       = "100"
+#         charset      = "utf8"
+#         linkinfo     = ""
+#         maxIdle      = "10"
+#         maxOpen      = "100"
+#         maxLifetime  = "30"
+
+[[gfcli.gen.dao]]
+    link   = "mysql:root:password@tcp(127.0.0.1:3306)/dba"
+    descriptionTag =   true
+    noModelComment =   true
+    removePrefix =     "gf_"

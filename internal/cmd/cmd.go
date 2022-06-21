@@ -5,6 +5,7 @@ import (
 	"gf_0620/internal/controller"
 
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gcmd"
 )
 
@@ -17,7 +18,14 @@ var (
 			s := g.Server()
 
 			group := s.Group("/api")
-			group.GET("/hello", controller.Hello)
+
+			group.Group("/user", func(g *ghttp.RouterGroup) {
+				g.GET("/", controller.User.Index)
+				g.POST("/", controller.User.Store)
+				// group.GET("/{uuid}", controller.User.Get)
+				// group.PATCH("/{uuid}", controller.User.Update)
+				// group.DELETE("/{uuid}", controller.User.Delete)
+			})
 
 			s.Run()
 			return nil
