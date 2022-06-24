@@ -19,12 +19,9 @@ var (
 
 			group := s.Group("/api")
 
-			group.Group("/user", func(g *ghttp.RouterGroup) {
+			group.Group("/users", func(g *ghttp.RouterGroup) {
 				g.GET("/", controller.User.Index)
 				g.POST("/", controller.User.Store)
-				// group.GET("/{uuid}", controller.User.Get)
-				// group.PATCH("/{uuid}", controller.User.Update)
-				// group.DELETE("/{uuid}", controller.User.Delete)
 			})
 
 			s.Run()
