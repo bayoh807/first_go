@@ -4,9 +4,9 @@
 
 package entity
 
-// Migrations is the golang structure for table migrations.
-type Migrations struct {
-	Id        uint   `json:"id"        ` //
-	Migration string `json:"migration" ` //
-	Batch     int    `json:"batch"     ` //
+// PlanMetas is the golang structure for table plan_metas.
+type PlanMetas struct {
+	Id         uint64 `json:"id"         ` //
+	PlanId     int    `json:"planId"     ` //
+	CategoryId int    `json:"categoryId" ` //
 }

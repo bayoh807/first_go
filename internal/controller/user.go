@@ -26,6 +26,6 @@ func (c *cUser) Store(ctx context.Context, req *v1.UserReq) (users *v1.UserRes, 
 	// g.RequestFromCtx(ctx).Response.Writeln("Store User!")
 
 	// service.User.GetUsers()
-	users, err = service.User.CreateUser()
+	users, err = service.User.CreateUser(ctx)
 	return
 }

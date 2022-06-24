@@ -2,7 +2,8 @@
   address =    ":8000"
   openapiPath ="/api.json"
   swaggerPath ="/swagger"
-
+  GF_DEBUG=true
+  debug = true
 
 [logger]
   level = "all"
@@ -14,7 +15,7 @@
         port         = "3306"
         user         = "root"
         pass         = "password"
-        name         = "dba"
+        name         = "example_app"
         type         = "mysql"
         role         = "master"
         debug        = "true"
